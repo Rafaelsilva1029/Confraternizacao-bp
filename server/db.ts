@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, funcionarios, InsertFuncionario, despesas, InsertDespesa } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,67 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+export async function getAllFuncionarios() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(funcionarios).orderBy(funcionarios.nome);
+}
+
+export async function getFuncionarioById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(funcionarios).where(eq(funcionarios.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createFuncionario(data: InsertFuncionario) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  const result = await db.insert(funcionarios).values(data);
+  return result;
+}
+
+export async function updateFuncionario(id: number, data: Partial<InsertFuncionario>) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.update(funcionarios).set(data).where(eq(funcionarios.id, id));
+}
+
+export async function deleteFuncionario(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.delete(funcionarios).where(eq(funcionarios.id, id));
+}
+
+export async function getAllDespesas() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(despesas).orderBy(despesas.data_compra);
+}
+
+export async function getDespesaById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(despesas).where(eq(despesas.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createDespesa(data: InsertDespesa) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.insert(despesas).values(data);
+}
+
+export async function updateDespesa(id: number, data: Partial<InsertDespesa>) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.update(despesas).set(data).where(eq(despesas.id, id));
+}
+
+export async function deleteDespesa(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.delete(despesas).where(eq(despesas.id, id));
+}
+
+// TODO: add more feature queries here as your schema grows.

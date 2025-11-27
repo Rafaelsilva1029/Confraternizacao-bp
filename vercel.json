@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm build",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install",
+  "framework": "other",
+  "env": {
+    "DATABASE_URL": {
+      "description": "MySQL database connection string"
+    },
+    "JWT_SECRET": {
+      "description": "Secret key for JWT session signing"
+    }
+  },
+  "envPrefix": "NEXT_PUBLIC_",
+  "regions": ["sfo1"],
+  "functions": {
+    "api/**": {
+      "maxDuration": 60
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/trpc/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

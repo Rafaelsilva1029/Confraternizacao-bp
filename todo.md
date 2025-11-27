@@ -1,0 +1,36 @@
+# Confraternização BP - TODO
+
+**Status**: Aplicativo funcional e pronto para deploy
+
+## Funcionalidades Principais
+
+- [x] Configurar schema do banco de dados (funcionarios e despesas)
+- [x] Implementar CRUD de funcionários
+- [x] Implementar CRUD de despesas
+- [x] Criar interface de pagamentos com filtros
+- [x] Criar interface de despesas
+- [x] Implementar sistema de status (Pago/Pendente/Aguardando Alvará)
+- [x] Implementar cálculos de totais (arrecadado, pendente, despesas, saldo)
+- [x] Criar componente de compartilhamento (WhatsApp)
+- [x] Implementar busca e filtros
+- [x] Adicionar sistema de notificações (toast)
+
+## Configuração e Deploy
+
+- [x] Configurar variáveis de ambiente
+- [x] Criar arquivo README com instruções
+- [x] Preparar estrutura para deploy no Vercel
+- [ ] Sincronizar com repositório GitHub
+- [ ] Fazer primeiro deploy no Vercel
+
+## Testes
+
+- [x] Validação de tipos TypeScript
+- [x] Testes unitários para procedures tRPC
+- [x] Testes de integração com banco de dados
+
+## Documentação
+
+- [x] README com instruções de setup
+- [x] Documentação de variáveis de ambiente
+- [x] Guia de deploy no Vercel
