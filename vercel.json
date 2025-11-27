@@ -12,7 +12,6 @@
       "description": "Secret key for JWT session signing"
     }
   },
-  "envPrefix": "NEXT_PUBLIC_",
   "regions": ["sfo1"],
   "functions": {
     "api/**": {
