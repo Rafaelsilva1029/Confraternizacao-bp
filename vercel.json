@@ -3,7 +3,6 @@
   "buildCommand": "pnpm build",
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install",
-  "framework": "other",
   "regions": ["sfo1"],
   "functions": {
     "api/**": {
