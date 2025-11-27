@@ -1,6 +1,6 @@
 # Confraternização BP - TODO
 
-**Status**: Aplicativo funcional e pronto para deploy
+**Status**: Aplicativo funcional, GitHub sincronizado, aguardando redeploy no Vercel
 
 ## Funcionalidades Principais
 
@@ -21,7 +21,8 @@
 - [x] Criar arquivo README com instruções
 - [x] Preparar estrutura para deploy no Vercel
 - [x] Sincronizar com repositório GitHub
-- [ ] Fazer primeiro deploy no Vercel
+- [x] Corrigir erro de schema vercel.json
+- [ ] Fazer primeiro deploy no Vercel (pendente redeploy)
 
 ## Testes
 
