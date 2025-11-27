@@ -4,14 +4,6 @@
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install",
   "framework": "other",
-  "env": {
-    "DATABASE_URL": {
-      "description": "MySQL database connection string"
-    },
-    "JWT_SECRET": {
-      "description": "Secret key for JWT session signing"
-    }
-  },
   "regions": ["sfo1"],
   "functions": {
     "api/**": {
