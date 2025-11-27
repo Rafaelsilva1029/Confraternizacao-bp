@@ -20,7 +20,7 @@
 - [x] Configurar variáveis de ambiente
 - [x] Criar arquivo README com instruções
 - [x] Preparar estrutura para deploy no Vercel
-- [ ] Sincronizar com repositório GitHub
+- [x] Sincronizar com repositório GitHub
 - [ ] Fazer primeiro deploy no Vercel
 
 ## Testes
